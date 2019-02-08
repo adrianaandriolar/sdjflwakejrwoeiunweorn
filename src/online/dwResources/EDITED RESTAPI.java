@@ -104,7 +104,7 @@ public class TopTrumpsRESTAPI {
 	 * winnerPile this method also will randomise the order of players for who
 	 * goes first. Round number is set to 1.
 	 */
-	public void startGame1() {
+	public void playGame() {
 		gameDeck = new ImportDeckInformation(deckFile);
 		Deck.shuffle(gameDeck.getDeck());
 
@@ -240,7 +240,7 @@ public class TopTrumpsRESTAPI {
 	 * */
 	@GET
 	@Path("/statsTable")
-	public String statsTable() throws IOException {
+	public String viewStatistics() throws IOException {
 		Database db = new Database();
 		int[] x = db.getGameStatisticsOnline();
 		db.closeConnection();
